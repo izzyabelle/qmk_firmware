@@ -14,8 +14,8 @@ enum layers {
 };
 
 // shorthand so the layer grids stay narrow
-#define COPY    RCS(KC_C)
-#define PASTE   RCS(KC_V)
+#define COPY    LCTL(KC_C)
+#define PASTE   RCTL(KC_V)
 #define CTL_BSP LCTL_T(KC_BSPC)
 #define ALT_LBR LALT_T(KC_LBRC)
 #define ALT_QUO LALT_T(KC_QUOT)
@@ -37,6 +37,7 @@ enum layers {
 #define SFT_RGT LSFT(KC_RGHT)
 #define CTL_LFT LCTL(KC_LEFT)
 #define CTL_RGT LCTL(KC_RGHT)
+#define BTICK   LSFT(KC_GRAVE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BL] = LAYOUT_65_ansi_blocker(
@@ -48,10 +49,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_DL] = LAYOUT_65_ansi_blocker(
-        KC_K,    KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_X,    KC_LCBR, KC_DQUO, KC_BSPC, KC_HOME,
-        QK_GESC, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_TILD, KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_UNDS, KC_PIPE, KC_PGUP,
-        QK_AREP, KC_TAB,  KC_Q,    KC_SLSH, KC_COLN, KC_L,    KC_AMPR, KC_M,    KC_W,    KC_B,    KC_V,    KC_LT,   KC_ENT,           KC_PGDN,
-        COPY,    KC_PERC, CTL_BSP, SC_LSPO, ALT_LBR, KC_EXLM, ALT_QUO, SC_SENT, CTL_MIN, KC_HASH, KC_QUES, PASTE,            KC_UP,   OSL(_FL),
+        KC_K,    KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_TILD,    KC_G,    KC_C,    KC_R,    KC_X,    KC_LCBR, KC_DQUO, KC_BSPC, KC_HOME,
+        QK_GESC, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_F,       KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_UNDS, KC_PIPE, KC_PGUP,
+        QK_AREP, KC_TAB,  KC_Q,    KC_SLSH, KC_COLN, KC_L,    KC_AMPR,    KC_M,    KC_W,    KC_B,    KC_V,    KC_LT,   KC_ENT,           KC_PGDN,
+        COPY,    KC_PERC, CTL_BSP, SC_LSPO, ALT_LBR, KC_EXLM, ALT_QUO,    SC_SENT, CTL_MIN, KC_HASH, KC_QUES, PASTE,            KC_UP,   OSL(_FL),
         CW_TOGG, SL_Z,    GUI_EQL,                            NL_SPC,                             GUI_DEL, SL_J,    KC_LEFT, KC_DOWN, KC_RGHT
     ),
 
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SL] = LAYOUT_65_ansi_blocker(
-        _______, _______, _______, _______, KC_GT,   _______, _______, _______, KC_4,    KC_3,    KC_6,    KC_DOT,  _______, _______, _______,
+        _______, _______, _______, BTICK,   KC_GT,   _______, _______, _______, KC_4,    KC_3,    KC_6,    KC_DOT,  _______, _______, _______,
         _______, KC_ASTR, KC_RBRC, KC_CIRC, KC_DLR,  _______, _______, _______, KC_1,    KC_0,    KC_5,    KC_9,    _______, _______, _______,
         _______, KC_RPRN, KC_RCBR, KC_HASH, KC_AT,   _______, _______, _______, KC_2,    KC_7,    KC_8,    _______, _______,          KC_PGDN,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______,          _______, _______,
